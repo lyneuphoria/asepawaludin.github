@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif; /* Font Poppins untuk seluruh halaman */
+}
+
+body {
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navbar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    display: flex;
+    justify-content: space-between; /* Memastikan space antara logo dan nav-links */
+    align-items: center;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+
+
+/* Class baru untuk navbar saat di-scroll */
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Sesuaikan warna teks navbar saat di home */
+.navbar .nav-item,
+.navbar .logo {
+    color: #ffffff;
+    transition: color 0.3s ease;
+}
+
+/* Warna teks saat di-scroll */
+.navbar.scrolled .nav-item,
+.navbar.scrolled .logo {
+    color: #333;
+}
+
+/* Logo */
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Pacifico', cursive;
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    gap: 30px; /* Jarak antar menu */
+    margin-left: auto; /* Mendorong menu ke kanan */
+    align-items: center;
+    list-style: none; /* Menghapus bullet points */
+}
+
+.nav-links li {
+    list-style-type: none; /* Memastikan tidak ada bullet points */
+}
+
+.nav-item {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-family: 'monaco';
+    font-weight: 500;
+    text-transform: uppercase; /* Membuat huruf kapital */
+    letter-spacing: 1px; /* Menambah jarak antar huruf */
+    padding: 5px 0;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+
+
+.nav-item:hover {
+    color: #007bff;
+}
+
+.nav-item:active {
+    transform: translateY(2px);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+/* Sections Styles */
+section {
+    padding: 100px 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#home {
+    background-image: url('https://4kwallpapers.com/images/walls/thumbs_2t/15227.png'); /* Ganti dengan path foto background */
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    padding: 100px 0;
+    min-height: 100vh;
+}
+
+#home h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-family: 'baloo 2', cursive; /* Font Baloo 2 untuk judul */
+}
+
+#home p {
+    color: #ffffff;
+    font-size: 18px;
+    font-family: 'baloo 2';
+}
+
+/* 3D Text Effect untuk section titles */
+.section-title {
+    font-size: 36px;
+    margin-bottom: 40px;
+    color: #333;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    text-shadow: 
+    2px 2px 0 #007bff,
+     4px 4px 0 rgba(0,0,0,0.2);
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    font-family: 'Baloo 2', cursive; /* Font Baloo 2 untuk title */
+}
+
+.section-title:hover {
+    transform: translateY(-5px);
+    text-shadow: 
+        2px 2px 0 #007bff,
+        6px 6px 0 rgba(0,0,0,0.2);
+}
+
+#about {
+    background-color: #ffffff;
+}
+
+#skills {
+    background-color: #f8f9fa;
+}
+
+/* Updated Skills Grid */
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+.skill-item {
+    background-color: #ffffff;
+    padding: 30px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.skill-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.skill-item i {
+    font-size: 40px;
+    color: #007bff;
+}
+
+.skill-item span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Logo specific colors */
+.fa-html5 { color: #e34f26; }
+.fa-css3-alt { color: #264de4; }
+.fa-js { color: #f7df1e; }
+.fa-react { color: #61dafb; }
+.fa-node { color: #339933; }
+.fa-python { color: #3776AB; }
+
+/* Styling for the profile picture */
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.profile-container {
+    flex-shrink: 0;
+    position: relative; /* Memastikan elemen bisa memanipulasi shadow dengan baik */
+}
+
+
+
+.profile-pic {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+        box-shadow: 
+            10px 10px 20px rgba(0, 0, 255, 0.3), /* Bayangan biru dengan transparansi lebih rendah */
+            -10px -10px 20px rgba(255, 0, 0, 0.3); /* Bayangan merah dengan transparansi lebih rendah */
+    
+        
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.profile-pic:active {
+    box-shadow: 
+        15px 15px 25px rgba(0, 0, 255, 0.9), /* Bayangan biru lebih besar saat ditekan */
+        -15px -15px 25px rgba(255, 0, 0, 0.9); /* Bayangan merah lebih besar saat ditekan */
+}
+
+/* Styling for the about text */
+.about-text {
+    max-width: 600px;
+    text-align: justify;
+    font-size: 18px;
+    color: #333;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* Hamburger Menu Styles */
+.hamburger span {
+    background-color: #ffffff; /* Warna putih saat di home */
+    transition: background-color 0.3s ease;
+}
+
+.navbar.scrolled .hamburger span {
+    background-color: #333; /* Warna gelap saat di-scroll */
+}
+
+@media screen and (max-width: 768px) {
+    .nav-links {
+        background-color: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+    }
+    
+    .navbar.scrolled .nav-links {
+        background-color: rgba(255, 255, 255, 0.9);
+        backdrop-filter: none;
+    }
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 60px;
+        right: 0; /* Mengubah dari left ke right */
+        width: 200px; /* Lebar menu lebih kecil */
+        background-color: rgba(0, 0, 0, 0.9);
+        padding: 15px;
+        border-radius: 0 0 0 10px; /* Rounded corner di kiri bawah */
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .nav-links li {
+        margin: 8px 0;
+        text-align: right; /* Teks rata kanan */
+    }
+}
+
+/* Footer Styling */
+.footer {
+    text-align: center; /* Teks di tengah */
+    color: #333; /* Warna teks */
+    font-size: 14px; /* Ukuran font */
+    width: 100%; /* Lebar footer sesuai layar */
+    position: relative; /* Posisi footer yang tidak fixed */
+    margin-top: 0; /* Menghapus margin-top */
+    padding: 0; /* Menghapus padding */
+}
+
+/* Mengatur margin dan line-height untuk paragraf */
+.footer p {
+    margin: 0; /* Menghapus margin */
+    padding: 0; /* Menghapus padding */
+    margin-top: -30px; /* Menarik teks copyright lebih tinggi */
+    line-height: 1; /* Mengurangi tinggi baris untuk rapatkan teks */
+}
+
+
